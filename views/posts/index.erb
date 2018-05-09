@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Posts</a>
+      <a href="/new">New Posts</a>
+    </nav>
+  <% @posts.each do |post| %>
+  <div class="">
+    <p><strong>Full Name: </strong><%= post[:first_name] + " " + post[:last_name] %></p>
+    <p><strong>Age: </strong><%= post[:age] %></p>
+    <p><strong>Email: </strong><%= post[:email] %></p>
+  </div>
+  <br>
+  <% end %>
+  </body>
+</html>
