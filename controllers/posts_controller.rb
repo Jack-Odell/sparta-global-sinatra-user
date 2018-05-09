@@ -9,19 +9,46 @@ class PostsController < Sinatra::Base
     register Sinatra::Reloader
   end
 
+
+  $posts = [{
+      email: "email_1@gmail.com",
+      first_name: "John",
+      last_name: "Smith",
+      age: 34
+    },
+    {
+      email: "email_2@gmail.com",
+      first_name: "Jane",
+      last_name: "Smalls",
+      age: 17
+    },
+    {
+      email: "email_3@gmail.com",
+      first_name: "Sam",
+      last_name: "Danes",
+      age: 45
+    }]
+
+
   # index
   get "/" do
+    @posts = $posts
+    erb :"posts/index"
   end
-
+  
   # NEW
-
   get "/new" do
-    "SHOW: This is the form"
+    "SHOW: This is the form to CREATE"
   end
 
   # SHOW
   get "/:id" do
-
+    id = params[:id]
+    @f_name = $posts[id.to_i][:first_name]
+    @l_name = $posts[id.to_i][:last_name]
+    @age = $posts[id.to_i][:age]
+    @email = $posts[id.to_i][:email]
+    erb :"posts/show"
   end
 
   # EDIT

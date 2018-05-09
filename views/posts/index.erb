@@ -5,6 +5,12 @@
     <title></title>
   </head>
   <body>
-
+  <% @posts.each do |post| %>
+  <div class="">
+    <h3><%= post[:first_name] + " " + post[:last_name] %></h3>
+    <p><%= post[:age] %></p>
+    <p><%= post[:email] %></p>
+  </div>
+  <% end %>
   </body>
 </html>
