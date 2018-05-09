@@ -5,8 +5,12 @@
     <title></title>
   </head>
   <body>
-    <h3><%= @f_name + " " + @l_name %></h3>
-    <p><%= @age %></p>
-    <p><%= @email %></p>
+    <nav>
+      <a href="/">Posts</a>
+      <a href="/new">New Posts</a>
+    </nav>
+    <p><strong>Full Name: </strong><%= @f_name + " " + @l_name %></p>
+    <p><strong>Age: </strong><%=@age %></p>
+    <p><strong>Email: </strong><%=@email %></p>
   </body>
 </html>

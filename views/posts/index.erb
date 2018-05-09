@@ -5,12 +5,17 @@
     <title></title>
   </head>
   <body>
+    <nav>
+      <a href="/">Posts</a>
+      <a href="/new">New Posts</a>
+    </nav>
   <% @posts.each do |post| %>
   <div class="">
-    <h3><%= post[:first_name] + " " + post[:last_name] %></h3>
-    <p><%= post[:age] %></p>
-    <p><%= post[:email] %></p>
+    <p><strong>Full Name: </strong><%= post[:first_name] + " " + post[:last_name] %></p>
+    <p><strong>Age: </strong><%= post[:age] %></p>
+    <p><strong>Email: </strong><%= post[:email] %></p>
   </div>
+  <br>
   <% end %>
   </body>
 </html>
